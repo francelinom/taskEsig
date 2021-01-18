@@ -24,6 +24,7 @@
     </div>
     <div class="card-body" >
       <div class="form-row" >
+
         <div class="form-group col-md-12" >
           <label for="title">Título</label>
           <input type="text" class="form-control" id="title" name="title" formControlName="title">
@@ -46,6 +47,19 @@
             <option>Média</option>
             <option>Baixa</option>
           </select>
+        </div>
+
+        <div class="form-group col-md-2">
+          <label for="date">Data</label>
+          <p-calendar
+              id="date"
+              formControlName="date"
+              inputStyleClass="form-control"
+              dataType="string"
+              dateFormat="dd/mm/yy"
+              [locale]="ptBR"
+              [showButtonBar]="true">
+          </p-calendar>
         </div>
 
       </div>

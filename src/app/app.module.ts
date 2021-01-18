@@ -14,6 +14,7 @@ import { InMemoryDatabase } from './in-memory-database';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import {CalendarModule} from 'primeng/calendar';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ToastrModule } from 'ngx-toastr';
     CommonModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
