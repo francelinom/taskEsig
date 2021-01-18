@@ -12,7 +12,7 @@
     </h1>
   </div>
   <div class="col-md">
-    <a routerLink="taskForm/new" class="btn btn-success float-right">+ Nova Tarefa</a>
+    <a routerLink="/taskForm/new" class="btn btn-success float-right">+ Nova Tarefa</a>
   </div>
 </div>
 
@@ -36,7 +36,7 @@
         <strong>{{task.responsible}}</strong><br>
       </td>
       <td>
-        <a routerLink="taskForm/edit/{{task.id}}" class="btn btn-outline-info btn-sm mr-2">Editar</a>
+        <a routerLink="/taskForm/edit/{{task.id}}" class="btn btn-outline-info btn-sm mr-2">Editar</a>
         <button (click)="deleteTask(task)" class="btn btn-outline-danger btn-sm mr-2">Excluir</button>
         <button class="btn btn-outline-success btn-sm">Concluir</button>
       </td>

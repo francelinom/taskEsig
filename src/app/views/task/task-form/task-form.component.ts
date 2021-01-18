@@ -131,8 +131,8 @@ export class TaskFormComponent implements OnInit, AfterContentChecked {
   // tslint:disable-next-line:typedef
   private actionsFormSuccess(task: Task) {
     this.toastr.success('Solicitação realizada com sucesso!');
-    this.router.navigateByUrl(['taskForm/list', {skipLocationChange: true}]).then(
-      () => this.router.navigate(['taskForm/list', task.id, 'edit'])
+    this.router.navigateByUrl('taskForm/list', {skipLocationChange: true}).then(
+      () => this.router.navigate(['taskForm/list', 'edit', task.id])
     );
   }
 

@@ -9,16 +9,16 @@ const routes: Routes = [
     component: TaskListComponent
   },
   {
+    path: 'taskForm/list',
+    component: TaskListComponent
+  },
+  {
     path: 'taskForm/new',
     component: TaskFormComponent
   },
   {
     path: 'taskForm/edit/:id',
     component: TaskFormComponent
-  },
-  {
-    path: 'taskForm/list',
-    component: TaskListComponent
   }
 ];
 
