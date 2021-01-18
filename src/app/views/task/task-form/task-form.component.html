@@ -1,0 +1,65 @@
+<nav class="mb-5">
+  <ol class="breadcrumb">
+    <li class="breadcrump-item"><a routerLink="/">Home</a>/</li>
+    <li class="breadcrump-item"><a routerLink="/taskForm/new">Tarefas</a>/</li>
+    <li class="breadcrump-item active">{{pageTitle}}</li>
+  </ol>
+</nav>
+
+<div class="row mb-4">
+  <div class="col-md">
+    <h1 class="h2 border-left pl-2">
+      {{pageTitle}}
+    </h1>
+  </div>
+  <div class="col-md">
+    <a routerLink="/" class="btn btn-danger float-right"><< voltar</a>
+  </div>
+</div>
+
+<form [formGroup]="taskForm" (submit)="submitForm()">
+  <div class="card">
+    <div class="card-header" >
+      Cadastrar tarefas
+    </div>
+    <div class="card-body" >
+      <div class="form-row" >
+        <div class="form-group col-md-12" >
+          <label for="title">Título</label>
+          <input type="text" class="form-control" id="title" name="title" formControlName="title">
+
+          <label for="description">Descrição</label>
+          <textarea class="form-control" id="description" rows="3" name="description" formControlName="description"></textarea>
+        </div>
+
+        <div class="form-group col-md-6" >
+          <label for="responsible" >Responsável</label>
+          <select class="form-control" id="responsible" name="responsible" formControlName="responsible">
+            <option *ngFor="let task of tasks">{{task.responsible}}</option>
+          </select>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="priority">Prioridade</label>
+          <select class="form-control" id="priority" name="priority" formControlName="priority">
+            <option>Alta</option>
+            <option>Média</option>
+            <option>Baixa</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-danger mt-4" *ngIf="serverErrorMessages">
+    <strong>Erro no Servidor:</strong>
+    <ul>
+      <li *ngFor="let error of serverErrorMessages">{{error}}</li>
+    </ul>
+  </div>
+
+  <div class="text-center">
+    <button [disabled]="submittingForm || taskForm.invalid" type="submit" class="btn btn-primary btn-lg mt-3">Cadastrar</button>
+  </div>
+</form>

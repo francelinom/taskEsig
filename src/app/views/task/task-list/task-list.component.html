@@ -1,0 +1,46 @@
+<nav class="mb-5">
+  <ol class="breadcrumb">
+    <li class="breadcrump-item"><a routerLink="/">Home</a>/</li>
+    <li class="breadcrump-item active">Tarefas</li>
+  </ol>
+</nav>
+
+<div class="row mb-4">
+  <div class="col-md">
+    <h1 class="h2 border-left pl-2">
+      Tarefas
+    </h1>
+  </div>
+  <div class="col-md">
+    <a routerLink="taskForm/new" class="btn btn-success float-right">+ Nova Tarefa</a>
+  </div>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <tr class="bg-danger text-light">
+      <th>Número</th>
+      <th>Título</th>
+      <th>Responsável</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of tasks">
+      <td>
+        <strong>{{task.id}}</strong><br>
+      </td>
+      <td>
+        <strong>{{task.title}}</strong><br>
+      </td>      <td>
+        <strong>{{task.responsible}}</strong><br>
+      </td>
+      <td>
+        <a routerLink="taskForm/edit/{{task.id}}" class="btn btn-outline-info btn-sm mr-2">Editar</a>
+        <button (click)="deleteTask(task)" class="btn btn-outline-danger btn-sm mr-2">Excluir</button>
+        <button class="btn btn-outline-success btn-sm">Concluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

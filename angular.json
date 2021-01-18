@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -120,5 +121,8 @@
       }
     }
   },
-  "defaultProject": "taskEsig"
+  "defaultProject": "taskEsig",
+  "cli": {
+    "analytics": "b20f680e-ba14-43fb-9a92-bc1a0deb243c"
+  }
 }
