@@ -1,7 +1,7 @@
 <nav class="mb-5">
   <ol class="breadcrumb">
     <li class="breadcrump-item"><a routerLink="/">Home</a>/</li>
-    <li class="breadcrump-item active">Tarefas</li>
+    <li class="breadcrump-item active">Lista de Tarefas</li>
   </ol>
 </nav>
 
@@ -15,6 +15,35 @@
     <a routerLink="/taskForm/new" class="btn btn-success float-right">+ Nova Tarefa</a>
   </div>
 </div>
+
+<nav class="navbar">
+  <div class="form-group col-md-3" >
+    <label for="id">Número</label>
+    <input class="form-control" type="number" name="id" [(ngModel)]="id"  placeholder="Número da Tarefa">
+  </div>
+
+  <div class="form-group col-md-12">
+    <label for="title">Título/Descrição</label>
+    <input type="text" class="form-control" id="title" name="title" [(ngModel)]="title"  placeholder="Digite sua Tarefa ou Descrição">
+  </div>
+
+  <div class="form-group col-md-5" >
+    <label for="responsible" >Responsável</label>
+    <select class="form-control" id="responsible" name="responsible" formControlName="responsible">
+      <option *ngFor="let task of tasks">{{task.responsible}}</option>
+    </select>
+  </div>
+
+  <div class="form-group col-md-5" >
+    <label for="situation" >Situação</label>
+    <select class="form-control" id="situation" name="situation" formControlName="situation">
+      <option>Em Andamento</option>
+      <option>Concluída</option>
+    </select>
+  </div>
+
+  <button (click)="search()" class="btn btn-primary  mt-2">Buscar Tarefas</button>
+</nav>
 
 <table class="table table-hover">
   <thead>
