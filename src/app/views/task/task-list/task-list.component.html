@@ -30,14 +30,14 @@
 
   <div class="form-group col-md-5" >
     <label for="responsible" >Responsável</label>
-    <select class="form-control" id="responsible" name="responsible" formControlName="responsible">
+    <select class="form-control" id="responsible" name="responsible" [(ngModel)]="responsible">
       <option *ngFor="let task of tasks">{{task.responsible}}</option>
     </select>
   </div>
 
   <div class="form-group col-md-5" >
     <label for="situation" >Situação</label>
-    <select class="form-control" id="situation" name="situation" formControlName="situation">
+    <select class="form-control" id="situation" name="situation" [(ngModel)]="situation">
       <option>Em Andamento</option>
       <option>Concluída</option>
     </select>
