@@ -17,13 +17,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import {CalendarModule} from 'primeng/calendar';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { TaskConcludedDirective } from './views/task/shared/task-concluded.directive';
+import { TaskLoginComponent } from './views/task/task-login/task-login.component';
+import { LoginService } from './views/task/shared/login.service';
+import { AuthGuard } from './views/task/shared/guard/auth-guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskListComponent,
     TaskFormComponent,
-    TaskHomeComponent
+    TaskHomeComponent,
+    TaskConcludedDirective,
+    TaskLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     CalendarModule,
     Ng2SearchPipeModule
   ],
-  providers: [],
+  providers: [LoginService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

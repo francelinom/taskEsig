@@ -27,7 +27,7 @@ export class TaskListComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   search() {
-    if (this.title === '' || this.id === '' || this.description === '' || this.situation === '' || this.responsible === '') {
+    if (this.title === '' ) {
       this.ngOnInit();
     } else {
       this.tasks = this.tasks.filter( res => {
@@ -45,4 +45,14 @@ export class TaskListComponent implements OnInit {
       );
     }
   }
+
+  changeStatus(task: Task): void {
+    if (confirm('Deseja Concluir Tarefa ' + task.title + ' ?')) {
+      this.taskService.statusTaks(task.id);
+      this.taskService.getAll().subscribe(
+        tasks => this.tasks = tasks
+      );
+    }
+  }
+
 }

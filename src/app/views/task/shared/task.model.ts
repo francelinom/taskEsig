@@ -5,6 +5,8 @@ export class Task {
     public description?: string,
     public responsible?: string,
     public priority?: string,
-    public date?: string
+    public date?: string,
+    public status?: boolean
   ){}
+
 }

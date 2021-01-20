@@ -114,7 +114,7 @@ export class TaskFormComponent implements OnInit, AfterContentChecked {
   // tslint:disable-next-line:typedef
   private setPageTitle() {
     if (this.currentAction === 'new') {
-      this.pageTitle = 'Cadastro de Nova Tarefa';
+      this.pageTitle = 'Cadastrar Tarefas';
     } else {
       const taskName = this.task.title || '';
       this.pageTitle = 'Editando Tarefa: ' + taskName;

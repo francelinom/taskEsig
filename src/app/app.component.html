@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+<nav *ngIf="showMenu" class="navbar navbar-expand-lg navbar-light bg-light mb-4">
   <a class="navbar-brand" routerLink="/">
     <img class="logo" src="assets/img/logo.png" alt="logo" >
   </a>
@@ -11,7 +11,7 @@
         <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/taskForm/new">Tarefas</a>
+        <a class="nav-link" routerLink="/taskForm/new">Cadastrar Tarefas</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/taskForm/list">Lista de Tarefas</a>

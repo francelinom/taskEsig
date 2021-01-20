@@ -51,6 +51,16 @@ export class TaskService {
     );
   }
 
+  statusTaks(id: number): void {
+    const tasks: Observable<Task[]> = this.getAll();
+    // tslint:disable-next-line:typedef
+    tasks.forEach(() => (obj: { id: number; status: any; }, index: string | number, objs: { [x: string]: { status: boolean; }}) => {
+        if (id === obj.id) {
+          objs[index].status = !obj.status;
+        }
+      });
+  }
+
   private jsonDataToTasks(jsonDate: any[]): Task[] {
     const task: Task[] = [];
     jsonDate.forEach(element => task.push(element as Task));

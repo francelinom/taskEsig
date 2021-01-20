@@ -1,6 +1,7 @@
 <nav class="mb-5">
   <ol class="breadcrumb">
     <li class="breadcrump-item"><a routerLink="/">Home</a>/</li>
+    <li class="breadcrump-item"><a routerLink="/taskForm/new">Cadastrar Tarefas</a>/</li>
     <li class="breadcrump-item active">Lista de Tarefas</li>
   </ol>
 </nav>
@@ -59,7 +60,10 @@
       <td>
         <strong>{{task.id}}</strong><br>
       </td>
-      <td>
+      <td
+        [appTaskConcluded]="task.status"
+        [class.warning]="!task.status"
+      >
         <strong>{{task.title}}</strong><br>
       </td>      <td>
         <strong>{{task.responsible}}</strong><br>
@@ -67,7 +71,7 @@
       <td>
         <a routerLink="/taskForm/edit/{{task.id}}" class="btn btn-outline-info btn-sm mr-2">Editar</a>
         <button (click)="deleteTask(task)" class="btn btn-outline-danger btn-sm mr-2">Excluir</button>
-        <button class="btn btn-outline-success btn-sm">Concluir</button>
+        <button (click)="changeStatus(task)" class="btn btn-outline-success btn-sm">Concluir</button>
       </td>
     </tr>
   </tbody>
