@@ -9,8 +9,11 @@
 </h1>
 
 <h3 align="center">
-  <a href="">Acessar a demostração</a>
+  <a href="https://taskesig.herokuapp.com/login">Acessar a demostração</a>
 </h3>
+Login: user@gmail.com 
+<br>
+senha: 123456
 
 ---
 
@@ -19,6 +22,7 @@
 - [Indice](#indice)
 - [Sobre](#sobre)
 - [Aplicação exemplo](#aplicação-exemplo)
+- [Itens implementadas](#itens-implementadas)
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
 - [Como baixar o projeto](#como-baixar-o-projeto)
 - [Autor](#autor)
@@ -57,6 +61,16 @@ andamento ou Concluída
 
 ---
 
+## Itens implementadas
+- Criar uma aplicação SPA utilizando Angular 11
+- Utilização do [In Memory DB](https://github.com/angular/in-memory-web-api)
+- Controle de controle de autenticação com usuário admin e
+senha
+- Projeto Publicado no heroku. [link do projeto](https://taskesig.herokuapp.com/login)
+- CRUD
+- Pesquisa de Tarefas por Titulo
+
+---
 ## Tecnologias utilizadas 
 
 O projeto foi desenvolvido utilizando as seguintes tecnologias
