@@ -63,6 +63,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 - [Angular 11](https://angular.io/)
 - [Bootstrap 4](https://ng-bootstrap.github.io/#/home)
 - JavaScript
+- TypeScript
 - HTML
 - CSS
 
